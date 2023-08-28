@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="author" content="robin rawat" >
+        <meta name="keywords" content="html css java web pages ">
+        <meta name="description" content="designing panda with the help of html css ">
+        <meta name="viewport" content="width=device-width,intial-state=1.0">
+        <title>Panda cartoon</title>
+        <style>
+            :root{
+                --white:white;
+                --black:black;
+            }
+            body{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                background-image:linear-gradient(to bottom right,rgb(145, 145, 145),rgb(0, 138, 251));
+            }
+            .container{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction: column;
+                max-width: 1000px;
+                width:80%;
+                margin:auto;
+                height:550px;
+                z-index: -4;
+            }
+
+            div.head{
+                display:flex;
+                justify-content:space-evenly;
+                align-items:center;
+                position: relative;
+                width:330px;
+                height:230px;
+                border:2px solid black;
+                background-color:var(--white);
+                border-radius:50%;
+                /* animation:size 4s linear infinite; */
+            }
+            
+            div.head::before,div.head::after{
+                position:absolute;
+                content: "";
+                width:120px;
+                height:120px;
+                background-color: var(--black);
+                border-radius:50%;
+                top:-12%;
+                z-index: -2;
+            }
+            div.head::before{
+                left:0%;
+            }
+            div.head::after{
+                right:0%;
+            }
+            div.left_cover,div.right_cover{
+                width:100px;
+                height:90px;
+                background-color:var(--black);
+                position:relative;
+                top:-5%;
+            }
+            div.left_cover{
+                transform:rotateZ(-30deg);
+                border-radius:60% 40% 100% 40%;
+                left:10px;
+                position: relative;
+            }
+            div.right_cover{
+                transform:rotateZ(30deg);
+                border-radius:40% 60% 40% 100%;
+                right:10px;
+                position: relative;
+            }
+            div.nose{
+                width:45px;
+                height:25px;
+                position: relative;
+                top:10%;
+                border-radius:50%;
+                background-color:var(--black);
+            }
+            div.nose::after{
+                content:"";
+                position:absolute;
+                height:20px;
+                width:40px;
+                border-left:5px solid var(--black);
+                border-bottom:7px solid var(--black);
+                border-bottom-right-radius: 40%;
+                border-bottom-left-radius: 50%;
+                left:46%;
+                top:100%;
+            }
+            div.nose::before{
+                content:"";
+                position:absolute;
+                height:20px;
+                width:40px;
+                border-right:5px solid var(--black);
+                border-bottom:7px solid var(--black);
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 40%;
+                top:100%;
+                right:46%;
+            }
+            div.nose_dot{
+                position:absolute;
+                width:25px;
+                height:8px;
+                border-radius: 50%;
+                background-color:var(--white);
+                right:10%;
+                top:10%;
+            }
+            div.left_eye,div.right_eye{
+                position: absolute;
+                width:50px;
+                height:50px;
+                background-color: var(--white);
+                border-radius: 50%;
+               }
+            div.left_eye{
+             left:35%;
+             top:15%;
+            }
+            div.right_eye{
+                top:15%;
+                left:15%;
+            }
+            div.hole{
+                width: 45px;
+                height:45px;
+                position:absolute;
+                background-color: var(--black);
+                border-radius: 50%;
+                right:2%;
+                top:3%;
+            }
+            div.right_hole{
+                position:absolute;
+                left:2%;
+            }
+            div.hole::before{
+                content: "";
+                width:15px;
+                height:15px;
+                border-radius: 50%;
+                background-color:var(--white);
+                position:absolute;
+            }
+            div.left_eye div.hole::before{
+                right:15%;
+                top:25%;
+            }
+            div.right_eye div.hole::before{
+                left:15%;
+                top:25%;
+            }
+            div.hole::after{
+                content: "";
+                width:5px;
+                height:5px;
+                border-radius: 50%;
+                background-color:var(--white);
+                position:absolute;
+            }
+            div.left_eye div.hole::after{
+                right:55%;
+                top:50%;
+            }
+            div.right_eye div.hole::after{
+                left:55%;
+                top:50%;
+            }
+            div.belly{
+                width:330px;
+                height:57px;
+                position: relative;
+                top:-50px;
+            }
+            div.right_hand,div.left_hand{
+                position:absolute;
+                width:70px;
+                height:150px;
+                background-color: var(--black);
+                z-index: -1;
+                
+            }
+            div.left_hand{
+                transform: rotateZ(50deg);
+                border-radius: 30% 50% 70% 50%;
+            }
+            div.right_hand{
+                transform: rotateZ(-50deg);
+                border-radius: 50% 30% 50% 70%;
+                right:0%;
+            }
+            div.lower{
+                width:330px;
+                height:150px;
+                position:relative;
+            }
+            div.left_foot,div.right_foot{
+                width:130px;
+                height:130px;
+                background-color: var(--black);
+                border-radius: 50%;
+                position: absolute;
+            }
+            div.right_foot{
+                right:0%;
+            }
+            div.box{
+                position:absolute;
+                width:90px;
+                height:20px;
+                border-bottom: 15px solid var(--black);
+                top:50%;
+                left:36%;
+                border-bottom-left-radius:50%;
+                border-bottom-right-radius: 50%;
+            }
+            div.foot_hole{
+                position: absolute;
+                bottom:5%;
+                left:16%;
+                width:90px;
+                height:90px;
+                border-radius: 50%;
+                background-color: var(--white);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="head">
+                <div class="left_cover">
+                    <div class="left_eye">
+                        <div class="hole"></div>
+                    </div>
+                </div>
+                <div class="nose">
+                    <div class="nose_dot"></div>
+                </div>
+                <div class="right_cover">
+                    <div class="right_eye">
+                        <div class="hole right_hole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="belly">
+                <div class="left_hand"></div>
+                <div class="right_hand"></div>
+            </div>
+            <div class="lower">
+                <div class="left_foot">
+                    <div class="foot_hole"></div>
+                </div>
+                <div class="box"></div>
+                <div class="right_foot">
+                    <div class="foot_hole"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
